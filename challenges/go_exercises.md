@@ -1,6 +1,7 @@
 # 🚀 Exercícios Go - Capítulos 1-3 (Contexto Real de APIs)
 
 ## 📋 Como usar esta lista:
+
 - Faça os exercícios em ordem (do mais fácil ao mais complexo)
 - Crie um arquivo `.go` para cada exercício
 - Commit no GitHub após cada um
@@ -12,7 +13,9 @@
 ## 🟢 NÍVEL 1: Fundamentos (Warming Up)
 
 ### Ex 1.1: Validador de Status HTTP
+
 **Conceitos:** variáveis, condicionais, inteiros
+
 ```
 Crie uma função que recebe um código HTTP (int) e retorna:
 - "Success" para códigos 200-299
@@ -25,7 +28,9 @@ Teste com: 200, 404, 500, 301, 999
 ```
 
 ### Ex 1.2: Calculadora de Rate Limit
+
 **Conceitos:** variáveis, operações matemáticas, float
+
 ```
 Você tem:
 - Total de requests permitidas por hora: 1000
@@ -40,14 +45,16 @@ Teste com: 500, 1000, 1200 requests
 ```
 
 ### Ex 1.3: Formatador de Log Level
+
 **Conceitos:** strings, condicionais, iota (constantes)
+
 ```
 Crie constantes usando iota para níveis de log:
 DEBUG = 0, INFO = 1, WARNING = 2, ERROR = 3, CRITICAL = 4
 
 Função que recebe um level (int) e retorna a string correspondente.
 
-Bônus: Crie outra função que verifica se deve logar 
+Bônus: Crie outra função que verifica se deve logar
 (ex: só loga se level >= WARNING)
 ```
 
@@ -56,7 +63,9 @@ Bônus: Crie outra função que verifica se deve logar
 ## 🟡 NÍVEL 2: Strings e Validações (Mais Realista)
 
 ### Ex 2.1: Validador de Email Simples
+
 **Conceitos:** strings, condicionais, funções de string
+
 ```
 Crie uma função que valida se um email é válido:
 - Deve ter exatamente um @
@@ -74,7 +83,9 @@ Teste com:
 ```
 
 ### Ex 2.2: Parser de Query String
+
 **Conceitos:** strings, loops, string literals
+
 ```
 Receba uma query string tipo: "name=John&age=30&city=NYC"
 
@@ -91,7 +102,9 @@ Dica: Use strings.Split()
 ```
 
 ### Ex 2.3: Sanitizador de Input de API
+
 **Conceitos:** strings, bytes, loops
+
 ```
 Crie uma função que "limpa" um input de usuário:
 1. Remove espaços do início e fim
@@ -109,7 +122,9 @@ Teste com: "  Hello World! @#$  ", "TESTE123!@#"
 ## 🟠 NÍVEL 3: Processamento de Dados (Como em APIs)
 
 ### Ex 3.1: Contador de Requests por Método HTTP
+
 **Conceitos:** arrays/slices, loops, condicionais
+
 ```
 Você tem um slice de métodos HTTP que chegaram:
 methods := []string{"GET", "POST", "GET", "DELETE", "GET", "POST", "PUT"}
@@ -124,7 +139,9 @@ Dica: Use um mapa (map) ou contadores separados
 ```
 
 ### Ex 3.2: Calculadora de Tempo de Resposta Médio
+
 **Conceitos:** slices, loops, float, operações matemáticas
+
 ```
 Você tem tempos de resposta de API em ms:
 responseTimes := []float64{120.5, 340.2, 89.7, 450.1, 200.3}
@@ -137,7 +154,9 @@ Calcule e imprima:
 ```
 
 ### Ex 3.3: Validador de Payload JSON (Simplificado)
+
 **Conceitos:** strings, bool, condicionais, bytes
+
 ```
 Receba uma string que deveria ser JSON válido.
 
@@ -151,7 +170,7 @@ Retorne: bool (parece JSON válido ou não)
 Teste com:
 `{"name":"John","age":30}` ✅
 `{name:John}` ❌
-`{"name":"John"` ❌
+`{"name":"John"`"}` ❌
 
 Obs: Não precisa validar JSON de verdade, só verificação básica!
 ```
@@ -161,7 +180,9 @@ Obs: Não precisa validar JSON de verdade, só verificação básica!
 ## 🔴 NÍVEL 4: Cenários Complexos (Desafios)
 
 ### Ex 4.1: Gerador de Token Simples
+
 **Conceitos:** strings, loops, constantes, random (novo!)
+
 ```
 Gere um token aleatório para autenticação:
 - 16 caracteres
@@ -172,7 +193,9 @@ Dica: Você vai precisar do pacote "math/rand" (pode pesquisar!)
 ```
 
 ### Ex 4.2: Rate Limiter Simples
+
 **Conceitos:** loops, condicionais, inteiros, bool
+
 ```
 Simule um rate limiter:
 - Limite: 5 requests por "janela"
@@ -192,7 +215,9 @@ Request 6: Rejected (limit exceeded)
 ```
 
 ### Ex 4.3: Construtor de URL de API
+
 **Conceitos:** strings, structs (se já viu!), condicionais
+
 ```
 Crie uma função que monta URLs de API:
 
@@ -212,6 +237,7 @@ Teste com diferentes combinações!
 ## 🎯 PROJETO FINAL DE SEMANA (Opcional, mas incrível!)
 
 ### Mini API Logger
+
 **Conceitos:** TUDO que você viu até agora
 
 Crie um programa que simula logs de uma API:
@@ -225,6 +251,7 @@ Crie um programa que simula logs de uma API:
    - Formate e imprima um log bonito
 
 Exemplo de saída:
+
 ```
 [1] GET /users - 200 OK (120ms)
 [2] POST /users - 201 Created (340ms)
@@ -256,7 +283,7 @@ Avg response time: 249.75ms
 ✅ Validações de input (essencial em qualquer API)  
 ✅ Processamento de dados (slices, loops)  
 ✅ Lógica de negócio (rate limiting, logs)  
-✅ Construção de utilidades reais  
+✅ Construção de utilidades reais
 
 **Esses exercícios são o tipo de coisa que você usa TODO DIA em APIs!**
 
